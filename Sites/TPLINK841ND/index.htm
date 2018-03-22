@@ -1,0 +1,51 @@
+<html><head>
+<title>TL-WR841ND</title><script language="javascript" type="text/javascript">
+var framePara = new Array(
+0,
+
+"main.htm",
+
+0,0 );
+</script>
+<script language="javascript" type="text/javascript">
+var indexPara = new Array(
+"192.168.0.1",
+0,
+"tplinklogin.net",
+0,0 );
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language="javascript" src="Index_files/char_set.js" type="text/javascript">
+</script><script type="text/javascript">
+var startUrl = "";
+var startHelpUrl = "";
+if(framePara[0] == 1)
+{
+	startUrl = "userRpm/WzdStartRpm.htm";
+	startHelpUrl = "help/WzdStartHelpRpm.htm";
+}
+else
+{
+	startUrl = "userRpm/StatusRpm.htm";
+	startHelpUrl = "help/StatusHelpRpm.htm";
+}
+document.write("<FRAMESET rows=90,*>");
+document.write("<FRAME name=topFrame marginWidth=0 marginHeight=0 src=\"frames/top.htm\" noResize scrolling=no frameSpacing=0 frameBorder=0 id=\"topFrame\">");
+document.write("<FRAMESET cols=182,55%,*>");
+document.write("<FRAME name=bottomLeftFrame marginWidth=0 marginHeight=0 src=\"userRpm/MenuRpm.htm\" noResize frameBorder=1 scrolling=auto style=\"overflow-x:hidden\" id=\"bottomLeftFrame\">");
+document.write("<FRAME name=mainFrame marginWidth=0 marginHeight=0 src=" +startUrl+" frameBorder=1 id=\"mainFrame\">");
+document.write("<FRAME name=helpFrame marginWidth=0 marginHeight=0 src="+startHelpUrl+" frameBorder=1 id=\"helpFrame\">");
+document.write("</FRAMESET>");
+</script></head>
+
+		
+	
+<frameset rows="90,*"><frame name="topFrame" marginwidth="0" marginheight="0" src="Index_files/top.htm" noresize="noresize" scrolling="no" framespacing="0" frameborder="0" id="topFrame"><frameset cols="182,55%,*"><frame name="bottomLeftFrame" marginwidth="0" marginheight="0" src="Index_files/MenuRpm.htm" noresize="noresize" frameborder="1" scrolling="auto" style="overflow-x:hidden" id="bottomLeftFrame"><frame name="mainFrame" marginwidth="0" marginheight="0" src="userRpm/StatusRpm.htm" frameborder="1" id="mainFrame"><frame name="helpFrame" marginwidth="0" marginheight="0" src="help/StatusHelpRpm.htm" frameborder="1" id="helpFrame"></frameset>
+
+<noframes>
+	<body id="t_noFrame">Please upgrade to a version 4 or higher browser so that you can use this setup tool.</body>
+</noframes>
+
+
+</frameset>
+</html>
