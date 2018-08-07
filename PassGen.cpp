@@ -1,20 +1,23 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <math.h>
 
 #define MIN_LENGTH 8
 
 using namespace std;
 
 //#define PRINTTOTAL
-#define INCLUDEDATES //ddmmyyyy 
-#define INCLUDE3x3  //xxx xxx xxx 
-#define INCLUDE4x3 //xxx xxx xxx xxx 
-#define INCLUDE2x4 //xxxx xxxx 
-#define INCLUDE3x4 //xxxx xxxx xxxx 
-#define INCLUDE2x5 //xxxxx xxxxx 
-#define INCLUDE3x5 //xxxxx xxxxx xxxxx 
-#define SYMBOLS //from xxxxxxxx to xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx(63 symbols) 
-#define POPULAR //qwerasdf e.c.
+#define DIGITONLY
+/*#define INCLUDEDATES //ddmmyyyy*/
+/*#define INCLUDE3x3  //xxx xxx xxx*/
+/*#define INCLUDE4x3 //xxx xxx xxx xxx*/
+/*#define INCLUDE2x4 //xxxx xxxx*/
+/*#define INCLUDE3x4 //xxxx xxxx xxxx*/
+/*#define INCLUDE2x5 //xxxxx xxxxx*/
+/*#define INCLUDE3x5 //xxxxx xxxxx xxxxx*/
+/*#define SYMBOLS //from xxxxxxxx to xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx(63 symbols)*/
+/*#define POPULAR //qwerasdf e.c.*/
 
 
 /*const string arr[] = {"012", "123", "234", "345", "456", "567", "678", "789", "890",
@@ -53,133 +56,139 @@ void generator() {
     unsigned int sizearr = 0;
     unsigned int total = 0;
 
-	#ifdef INCLUDEDATES
-		for (int y = 1900; y <= 2050; y++) {
-			for (int m = 1; m <= 12; m++) {
-				for (int d = 1; d <= 31; d++) {
-					if (d < 10 && m < 10)
-						cout << "0" << d << "0" << m << y << endl;
-					else if (d < 10 && m > 9)
-						cout << "0" << d << m << y << endl;
-					else if (d > 9 && m < 10)
-						cout << d << "0" << m << y << endl;
-					else cout << d << m << y << endl;
-					total++;
-				}
-			}
-		}
-	#endif
+#ifdef DIGITONLY
+	for(int i = 0; i < pow(10, MIN_LENGTH); i++) {
+		cout << setfill('0') << setw(MIN_LENGTH) << i << endl;
+	}
+#endif /* DIGITONLY */
 
-	#ifdef INCLUDE3x3
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					cout << i << j << k << i << j << k << i << j << k << endl;
-					total++;
-				}
+#ifdef INCLUDEDATES
+	for (int y = 1900; y <= 2050; y++) {
+		for (int m = 1; m <= 12; m++) {
+			for (int d = 1; d <= 31; d++) {
+				if (d < 10 && m < 10)
+					cout << "0" << d << "0" << m << y << endl;
+				else if (d < 10 && m > 9)
+					cout << "0" << d << m << y << endl;
+				else if (d > 9 && m < 10)
+					cout << d << "0" << m << y << endl;
+				else cout << d << m << y << endl;
+				total++;
 			}
 		}
-	#endif
+	}
+#endif
 
-	#ifdef INCLUDE4x3
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					cout << i << j << k << i << j << k << i << j << k << i << j << k << endl;
+#ifdef INCLUDE3x3
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				cout << i << j << k << i << j << k << i << j << k << endl;
+				total++;
+			}
+		}
+	}
+#endif
+
+#ifdef INCLUDE4x3
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				cout << i << j << k << i << j << k << i << j << k << i << j << k << endl;
+				total++;
+			}
+		}
+	}
+#endif
+
+#ifdef INCLUDE2x4
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				for (int l = 0; l <= 9; l++) {
+					cout << i << j << k << l << i << j << k << l << endl;
 					total++;
 				}
 			}
 		}
-	#endif
-	
-	#ifdef INCLUDE2x4
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					for (int l = 0; l <= 9; l++) {
-						cout << i << j << k << l << i << j << k << l << endl;
+	}
+#endif
+
+#ifdef INCLUDE3x4
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				for (int l = 0; l <= 9; l++) {
+					cout << i << j << k << l << i << j << k << l << i << j << k << l << endl;
+					total++;
+				}
+			}
+		}
+	}
+#endif
+
+#ifdef INCLUDE2x5
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				for (int l = 0; l <= 9; l++) {
+					for (int m = 0; m <= 9; m++) {
+						cout << i << j << k << l << m << i << j << k << l << m << endl;
 						total++;
 					}
 				}
 			}
 		}
-	#endif
+	}
+#endif
 
-	#ifdef INCLUDE3x4
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					for (int l = 0; l <= 9; l++) {
-						cout << i << j << k << l << i << j << k << l << i << j << k << l << endl;
+#ifdef INCLUDE3x5
+	for (int i = 0; i <= 9; i++) {
+		for (int j = 0; j <= 9; j++) {
+			for (int k = 0; k <= 9; k++) {
+				for (int l = 0; l <= 9; l++) {
+					for (int m = 0; m <= 9; m++) {
+						cout << i << j << k << l << m << i << j << k << l << m << i << j << k << l << m << endl;
 						total++;
 					}
 				}
 			}
 		}
-	#endif
+	}
+#endif
 
-	#ifdef INCLUDE2x5
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					for (int l = 0; l <= 9; l++) {
-						for (int m = 0; m <= 9; m++) {
-							cout << i << j << k << l << m << i << j << k << l << m << endl;
-							total++;
-						}
-					}
-				}
+#ifdef SYMBOLS
+	for (int i = 32; i <= 126; i++) {
+		int e = 8;
+		int w = 1;
+		string s = "";
+		while ((w <= e) && (e <= 63)) {
+			s += (char)(i);
+			if (w == e) {
+				e++;
+				w = 0;
+				cout << s << endl;;
+				total++;
+				s = "";
 			}
+			w++;
 		}
-	#endif
+	}
+#endif
 
-	#ifdef INCLUDE3x5
-		for (int i = 0; i <= 9; i++) {
-			for (int j = 0; j <= 9; j++) {
-				for (int k = 0; k <= 9; k++) {
-					for (int l = 0; l <= 9; l++) {
-						for (int m = 0; m <= 9; m++) {
-							cout << i << j << k << l << m << i << j << k << l << m << i << j << k << l << m << endl;
-							total++;
-						}
-					}
-				}
-			}
+#ifdef POPULAR
+	sizearr = (sizeof(popular) / sizeof(popular[0]));
+	for (int i = 0; i < sizearr; i++) {
+		for (int j = 0; j < sizearr; j++) {
+				cout << popular[i] << popular[j] << endl;
+				total++;
 		}
-	#endif
+	}
+#endif
 
-	#ifdef SYMBOLS
-		for (int i = 32; i <= 126; i++) {
-			int e = 8;
-			int w = 1;
-			string s = "";
-			while ((w <= e) && (e <= 63)) {
-				s += (char)(i);
-				if (w == e) {
-					e++;
-					w = 0;
-					cout << s << endl;;
-					total++;
-					s = "";
-				}
-				w++;
-			}
-		}
-	#endif
-
-	#ifdef POPULAR
-		sizearr = (sizeof(popular) / sizeof(popular[0]));
-		for (int i = 0; i < sizearr; i++) {
-			for (int j = 0; j < sizearr; j++) {
-					cout << popular[i] << popular[j] << endl;
-					total++;
-			}
-		}
-	#endif
-
-	#ifdef PRINTTOTAL
-		cout << "TOTAL: " << total << endl;
-	#endif
+#ifdef PRINTTOTAL
+	cout << "TOTAL: " << total << endl;
+#endif
 }
 
 int main() {
